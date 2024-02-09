@@ -66,7 +66,7 @@
         <stringProp name="username">do-prod</stringProp>
       </JDBCDataSource>
       <hashTree/>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
         <collectionProp name="CookieManager.cookies">
           <elementProp name="_ym_uid" elementType="Cookie" testname="_ym_uid">
             <stringProp name="Cookie.value">1707399967912998281</stringProp>
@@ -184,7 +184,7 @@
         <stringProp name="variableNames">email,password</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <longProp name="ThreadGroup.duration">0</longProp>
@@ -197,11 +197,11 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_01_home">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_01_home" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -7941,7 +7941,7 @@
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="JDBC PostProcessor">
+          <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="JDBC PostProcessor" enabled="true">
             <stringProp name="dataSource"></stringProp>
             <stringProp name="query">prev.setIgnore()</stringProp>
             <stringProp name="queryArguments"></stringProp>
@@ -7955,7 +7955,7 @@
           </JDBCPostProcessor>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_04_req_registration">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_04_req_registration" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -8617,8 +8617,22 @@
           <stringProp name="queryType">Select Statement</stringProp>
           <stringProp name="query">UPDATE users
 SET password = &apos;$2a$10$lDyjp2iJ2HhWwrDHI5q37O32CIVqENgrztOCxGyCoJqT7TbxzXX92&apos;,
-    role = &apos;ROLE_TESTER&apos;
-WHERE email = &apos;${email}&apos;;</stringProp>
+    role = &apos;ROLE_TESTER&apos;,
+    gender = &apos;MALE&apos;
+WHERE email = &apos;${email}&apos;;
+
+UPDATE tester t
+SET
+    t.city = &apos;Moscow&apos;,
+    t.family_status = &apos;NOT_MARRIED&apos;,
+    t.fio = &apos;Фамилия Имя Отчество&apos;,
+    t.income = 55000,
+    t.kids = &apos;NONE&apos;,
+    t.education_id = 2,
+    t.social_status_id = 2
+FROM users u
+WHERE t.id = u.id
+AND u.email = &apos;${email}&apos;;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
