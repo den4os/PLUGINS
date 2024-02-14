@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
@@ -82,7 +84,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
           <collectionProp name="Arguments.arguments">
             <elementProp name="influxdbMetricsSender" elementType="Argument">
@@ -191,6 +193,25 @@
         <stringProp name="username">do-prod</stringProp>
       </JDBCDataSource>
       <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="false">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery"></stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+        <stringProp name="dataSource">postg</stringProp>
+        <stringProp name="dbUrl">jdbc:postgresql://dev-lt.uxcrowd.ru:48989/uxtest</stringProp>
+        <stringProp name="driver">org.postgresql.Driver</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">6YN6QXhv0stB8Y9OSXVF</stringProp>
+        <stringProp name="poolMax">0</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">do-prod</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
       <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
         <collectionProp name="CookieManager.cookies"/>
         <boolProp name="CookieManager.clearEachIteration">true</boolProp>
@@ -220,7 +241,7 @@
         </elementProp>
       </SetupThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -8030,7 +8051,7 @@
               <hashTree/>
             </hashTree>
           </hashTree>
-          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_user_pass_and_gender">
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_user_pass_and_gender" enabled="true">
             <stringProp name="dataSource">postg</stringProp>
             <stringProp name="queryType">Update Statement</stringProp>
             <stringProp name="query">UPDATE users
@@ -8104,41 +8125,20 @@ AND users.email = &apos;${email}&apos;;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-538271523">
-            <stringProp name="52">4</stringProp>
-            <stringProp name="0">0</stringProp>
-            <stringProp name="1629">30</stringProp>
-            <stringProp name="1567005">3000</stringProp>
+          <collectionProp name="527047037">
+            <stringProp name="54">6</stringProp>
             <stringProp name="48">0</stringProp>
-          </collectionProp>
-          <collectionProp name="-1742274599">
-            <stringProp name="52">4</stringProp>
-            <stringProp name="53430">600</stringProp>
-            <stringProp name="1629">30</stringProp>
-            <stringProp name="1541058">2400</stringProp>
-            <stringProp name="48">0</stringProp>
-          </collectionProp>
-          <collectionProp name="1503621874">
-            <stringProp name="52">4</stringProp>
-            <stringProp name="1509345">1200</stringProp>
-            <stringProp name="1629">30</stringProp>
-            <stringProp name="1515111">1800</stringProp>
-            <stringProp name="48">0</stringProp>
-          </collectionProp>
-          <collectionProp name="382373618">
-            <stringProp name="52">4</stringProp>
-            <stringProp name="1515111">1800</stringProp>
-            <stringProp name="1629">30</stringProp>
-            <stringProp name="1509345">1200</stringProp>
-            <stringProp name="48">0</stringProp>
-          </collectionProp>
-          <collectionProp name="-882467431">
-            <stringProp name="52">4</stringProp>
-            <stringProp name="1541058">2400</stringProp>
             <stringProp name="1629">30</stringProp>
             <stringProp name="53430">600</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+          <collectionProp name="906360342">
+            <stringProp name="50">2</stringProp>
+            <stringProp name="50547">300</stringProp>
+            <stringProp name="1629">30</stringProp>
+            <stringProp name="50547">300</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
         </collectionProp>
@@ -8149,13 +8149,13 @@ AND users.email = &apos;${email}&apos;;</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
         </TestAction>
         <hashTree>
-          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer">
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
             <doubleProp>
               <name>throughput</name>
@@ -8165,7 +8165,7 @@ AND users.email = &apos;${email}&apos;;</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_01_home">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_01_home" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -8342,7 +8342,7 @@ AND users.email = &apos;${email}&apos;;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_02_press_input">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_02_press_input" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -8422,11 +8422,11 @@ AND users.email = &apos;${email}&apos;;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_03_req_registration">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_01_TR_03_req_registration" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="&gt;_/api/register">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="&gt;_/api/register" enabled="true">
             <stringProp name="HTTPSampler.domain">dev-lt.uxcrowd.ru</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">api/register</stringProp>
@@ -8596,7 +8596,7 @@ AND users.email = &apos;${email}&apos;;</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -8613,7 +8613,8 @@ AND users.email = &apos;${email}&apos;;</stringProp>
           <stringProp name="query">UPDATE users
 SET password = &apos;$2a$10$lDyjp2iJ2HhWwrDHI5q37O32CIVqENgrztOCxGyCoJqT7TbxzXX92&apos;,
     role = &apos;ROLE_TESTER&apos;,
-    gender = &apos;MALE&apos;
+    gender = &apos;MALE&apos;,
+    birthday = to_date(&apos;15-03-2000&apos;, &apos;DD-MM-YYYY&apos;)
 WHERE role=&apos;ROLE_NEW_TESTER&apos; and date_trunc(&apos;DAY&apos;,created_date)=date_trunc(&apos;DAY&apos;,now()  - interval &apos;3 hour&apos;);
 
 UPDATE tester
@@ -8624,7 +8625,7 @@ SET
     income = 55000,
     kids = &apos;NONE&apos;,
     education_id = 2,
-    social_status_id = 2
+    social_status_id = 2,
 FROM users
 WHERE tester.id = users.id
 AND date_trunc(&apos;DAY&apos;,created_date)=date_trunc(&apos;DAY&apos;,now()  - interval &apos;3 hour&apos;);</stringProp>
