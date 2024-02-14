@@ -237,7 +237,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
 
-//String filename = vars.get(&quot;EmailsFileName&quot;) + &quot;.csv&quot;;
 String filename = &quot;emails.csv&quot;;
 int count = Integer.parseInt(vars.get(&quot;TotalUsers&quot;));
 String user = vars.get(&quot;UserEmailPrefixName&quot;);
