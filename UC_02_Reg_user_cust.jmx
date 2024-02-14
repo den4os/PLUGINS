@@ -6,8 +6,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
@@ -47,7 +45,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -7808,7 +7806,7 @@
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://dev-lt.uxcrowd.ru/api/register">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://dev-lt.uxcrowd.ru/api/register" enabled="true">
             <stringProp name="HTTPSampler.domain">dev-lt.uxcrowd.ru</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -7979,7 +7977,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_testesrs_to_cust">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_testesrs_to_cust" enabled="true">
           <stringProp name="dataSource">postg</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
           <stringProp name="query">UPDATE customer_tariff_link 
@@ -8007,7 +8005,7 @@ WHERE customer_id IN(
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Cgange_cust_pass">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Cgange_cust_pass" enabled="true">
           <stringProp name="dataSource">postg</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
           <stringProp name="query">UPDATE users
@@ -8035,38 +8033,38 @@ WHERE email = &apos;${email}&apos;;</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="849547846">
+          <collectionProp name="1603080134">
             <stringProp name="52">4</stringProp>
             <stringProp name="0">0</stringProp>
-            <stringProp name="48687">120</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="1567005">3000</stringProp>
             <stringProp name="1784">80</stringProp>
           </collectionProp>
-          <collectionProp name="-214087056">
+          <collectionProp name="-1541814685">
             <stringProp name="56">8</stringProp>
             <stringProp name="53430">600</stringProp>
-            <stringProp name="48687">120</stringProp>
+            <stringProp name="1660">40</stringProp>
             <stringProp name="1541058">2400</stringProp>
             <stringProp name="1722">60</stringProp>
           </collectionProp>
-          <collectionProp name="1767206642">
+          <collectionProp name="1704050683">
             <stringProp name="56">8</stringProp>
             <stringProp name="1509345">1200</stringProp>
-            <stringProp name="1815">90</stringProp>
+            <stringProp name="1660">40</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="1660">40</stringProp>
           </collectionProp>
-          <collectionProp name="645926504">
+          <collectionProp name="582770545">
             <stringProp name="56">8</stringProp>
             <stringProp name="1515111">1800</stringProp>
-            <stringProp name="1815">90</stringProp>
+            <stringProp name="1660">40</stringProp>
             <stringProp name="1509345">1200</stringProp>
             <stringProp name="1598">20</stringProp>
           </collectionProp>
-          <collectionProp name="-674817434">
+          <collectionProp name="-737973393">
             <stringProp name="56">8</stringProp>
             <stringProp name="1541058">2400</stringProp>
-            <stringProp name="1815">90</stringProp>
+            <stringProp name="1660">40</stringProp>
             <stringProp name="53430">600</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
@@ -8078,13 +8076,13 @@ WHERE email = &apos;${email}&apos;;</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
         </TestAction>
         <hashTree>
-          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer">
             <intProp name="calcMode">0</intProp>
             <doubleProp>
               <name>throughput</name>
@@ -15886,7 +15884,7 @@ WHERE email = &apos;${email}&apos;;</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_testesrs_to_cust">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_testesrs_to_cust" enabled="true">
           <stringProp name="dataSource">postg</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
           <stringProp name="query">UPDATE customer_tariff_link 
@@ -15914,7 +15912,7 @@ WHERE customer_id IN(
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Cgange_cust_pass">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Cgange_cust_pass" enabled="true">
           <stringProp name="dataSource">postg</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
           <stringProp name="query">UPDATE users
@@ -15940,6 +15938,48 @@ WHERE email = &apos;${email}&apos;;</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
+      <com.blazemeter.jmeter.threads.arrivals.ArrivalsThreadGroup guiclass="com.blazemeter.jmeter.threads.arrivals.ArrivalsThreadGroupGui" testclass="com.blazemeter.jmeter.threads.arrivals.ArrivalsThreadGroup" testname="bzm - Arrivals Thread Group">
+        <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="TargetLevel">36</stringProp>
+        <stringProp name="RampUp">5</stringProp>
+        <stringProp name="Steps">5</stringProp>
+        <stringProp name="Hold"></stringProp>
+        <stringProp name="LogFilename"></stringProp>
+        <stringProp name="Iterations"></stringProp>
+        <stringProp name="ConcurrencyLimit"></stringProp>
+        <stringProp name="Unit">M</stringProp>
+      </com.blazemeter.jmeter.threads.arrivals.ArrivalsThreadGroup>
+      <hashTree/>
+      <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="bzm - Concurrency Thread Group">
+        <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="TargetLevel">36</stringProp>
+        <stringProp name="RampUp">5</stringProp>
+        <stringProp name="Steps">5</stringProp>
+        <stringProp name="Hold"></stringProp>
+        <stringProp name="LogFilename"></stringProp>
+        <stringProp name="Iterations"></stringProp>
+        <stringProp name="Unit">M</stringProp>
+      </com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup>
+      <hashTree/>
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="jp@gc - Stepping Thread Group">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.num_threads">36</stringProp>
+        <stringProp name="Threads initial delay">0</stringProp>
+        <stringProp name="Start users count">8</stringProp>
+        <stringProp name="Start users count burst">4</stringProp>
+        <stringProp name="Start users period">60</stringProp>
+        <stringProp name="Stop users count"></stringProp>
+        <stringProp name="Stop users period">1</stringProp>
+        <stringProp name="flighttime">60</stringProp>
+        <stringProp name="rampUp"></stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </kg.apc.jmeter.threads.SteppingThreadGroup>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
