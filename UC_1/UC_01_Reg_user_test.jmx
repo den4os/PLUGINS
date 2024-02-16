@@ -27,8 +27,6 @@
           </elementProp>
         </collectionProp>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
@@ -9970,7 +9968,7 @@ try {
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_user_pass_and_gender" enabled="true">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC_Set_user_pass_and_gender">
           <stringProp name="dataSource">postg</stringProp>
           <stringProp name="queryType">Update Statement</stringProp>
           <stringProp name="query">UPDATE users
